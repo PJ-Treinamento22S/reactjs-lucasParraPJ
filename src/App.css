@@ -1,38 +1,366 @@
-.App {
-  text-align: center;
+body {
+  margin: 0px;
+  justify-content: center;
+  background-color: #fff96c;
+  font-family: "Roboto", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#containerGeral {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff96c;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.containerLateral {
+  height: 100vh;
+  width: 14.5%;
+  margin: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: fixed;
+}
+
+.containerLateral:first-child {
+  left: 11%;
+}
+
+.containerLateral:last-child {
+  right: 11%;
+}
+
+.containerCentral {
+  height: 100vh;
+  width: 45%;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.textoPaginas {
+  text-decoration: none;
+  color: black;
+  font-size: 26px;
+  font-family: "Roboto", sans-serif;
+  height: 50px;
+}
+
+#containerPaginas {
+  margin-top: 16px;
+  margin-left: 80px;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.paginasBotao {
+  display: flex;
+  width: 180px;
+  height: 50px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0px;
+}
+
+.paginasBotao:hover {
+  border: 1px solid rgba(203, 124, 6, 1);
+  border-radius: 32px;
+}
+
+.paginasBotao:active {
+  background-color: rgba(203, 124, 6, 0.42);
+  border: 1px solid rgba(203, 124, 6, 1);
+  border-radius: 32px;
+}
+
+.paginasBotao i {
+  margin-right: 3%;
+  margin-left: 6%;
+}
+
+#selecionada {
+  background-color: rgba(203, 124, 6, 0.42);
+  border: 1px solid rgba(203, 124, 6, 1);
+  border-radius: 32px;
+}
+
+#patinho {
+  height: 9%;
+  width: 24%;
+  margin-top: 12%;
+  margin-right: 10%;
+}
+
+#containerBusca {
+  width: 80%;
+  height: 5.5%;
+  margin-top: 12%;
+  align-self: center;
+}
+
+#busca {
+  width: 90%;
+  height: 100%;
+  border-radius: 32px;
+  border: solid 1px rgba(203, 124, 6, 1);
+  background-color: rgba(203, 124, 6, 0.42);
+  font-size: 22px;
+  color: rgba(203, 124, 6, 1);
+  padding-left: 20px;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+}
+
+#busca::placeholder {
+  color: rgba(203, 124, 6, 1);
+  opacity: 1;
+}
+
+#containerNoticias {
+  height: auto;
+  width: 80%;
+  background-color: rgba(203, 124, 6, 0.42);
+  border: 1px solid rgba(203, 124, 6, 1);
+  border-radius: 8px;
+  margin-top: 16%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#headerNoticias {
+  font-size: 24px;
+  color: rgba(203, 124, 6, 1);
+  font-family: "Roboto", sans-serif;
+  margin-top: 8%;
+}
+
+.noticia {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  height: 20%;
+  justify-content: space-between;
+  margin-bottom: 15%;
+}
+
+.textoNoticia {
+  font-size: 12px;
+  color: black;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  width: 65%;
+}
+
+.imagemNoticia {
+  width: 35%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+#titulo {
+  font-size: 36px;
+  color: black;
+  font-family: "Roboto", sans-serif;
+  margin-left: 3%;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+
+#novoPiu {
+  width: 90%;
+  height: 16%;
+  background-color: rgba(203, 124, 6, 0.42);
+  border: 1px solid rgba(203, 124, 6, 1);
+  border-radius: 8px;
+  align-self: center;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2%;
+  flex-shrink: 0;
+}
+
+.imgETexto {
+  display: flex;
+  flex-direction: row;
+  height: 55%;
+  margin-top: 2%;
+  margin-left: 4%;
+}
+
+#contadorCaracter {
+  font-family: "Roboto", sans-serif;
+  margin-top: 6.5%;
+  margin-right: 5%;
+  font-size: 18px;
+  color: rgba(203, 124, 6, 1);
+}
+
+.textosPosts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.6%;
+  padding: 0;
+}
+
+.textosPosts p {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.textosPosts p:first-child {
+  color: rgba(203, 124, 6, 1);
+  margin: 1%;
+}
+
+#formNovoPiu {
+  margin-left: 1%;
+  margin-top: 3%;
+  width: 90%;
+}
+
+#conteudoNovoPiu {
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  color: black;
+  margin-top: 1.5%;
+  width: 99%;
+}
+
+#conteudoNovoPiu::placeholder {
+  color: rgba(0, 0, 0, 0.56);
+}
+
+#cachorro {
+  height: 100%;
+  width: 12%;
+  border-radius: 50%;
+}
+
+#postarBotao {
+  width: 22%;
+  height: 25%;
+  background-color: rgba(203, 124, 6, 1);
+  color: white;
+  border: none;
+  border-radius: 32px;
+  align-self: flex-end;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  margin-right: 5%;
+  margin-top: 1%;
+}
+
+#postarBotao:hover {
+  background-color: rgba(223, 144, 26, 1);
+  cursor: pointer;
+}
+
+#postarBotao:active {
+  background-color: rgba(203, 124, 6, 1);
+}
+
+.piu {
+  width: 90%;
+  height: 16%;
+  background-color: rgba(203, 124, 6, 0.42);
+  border: 1px solid rgba(203, 124, 6, 1);
+  border-radius: 8px;
+  align-self: center;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  flex-shrink: 0;
+}
+
+.fotoPerfil {
+  height: 100%;
+  width: 12%;
+  border-radius: 50%;
+}
+
+.conteudoPost {
+  color: black;
+  width: 80%;
+  margin-top: 4%;
+  margin-left: 1%;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.ajustesPosts {
+  position: relative;
+  bottom: 55%;
+  left: 94%;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  height: 15%;
+  width: 4%;
+  border: none;
+}
+
+.ajustesPosts i:hover {
+  cursor: pointer;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.interacoes {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  justify-content: space-between;
+  margin-left: 16%;
 }
 
-@keyframes App-logo-spin {
+.interacoes button {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.interacoes button i {
+  font-size: 22px;
+  color: black;
+}
+
+.interacoes button i:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.interacoes button p {
+  font-size: 22px;
+  align-self: baseline;
+  margin: 0 0 0 30%;
+  font-family: "Roboto", sans-serif;
+}
+
+.msgVazia {
+  color: red;
+  position: absolute;
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+  animation: fade-out 2s;
+}
+
+@keyframes fade-out {
   from {
-    transform: rotate(0deg);
+    opacity: 1;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 0;
   }
 }
