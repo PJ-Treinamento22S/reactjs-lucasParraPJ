@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext } from "react";
 import { useEffect, useState } from "react";
 import "./App.css";
 import Post from "./components/Post";
@@ -13,6 +13,18 @@ async function getData() {
   return response.data;
 }
 
+interface ContextFavoritosProps {
+  favoritos: string[];
+  setFavoritos: React.Dispatch<React.SetStateAction<string[]>>;
+}
+export const ContextFavoritos = createContext({} as ContextFavoritosProps);
+
+interface ContextPiusProps {
+  pius: PiuData[];
+  setPius: React.Dispatch<React.SetStateAction<PiuData[]>>;
+}
+export const ContextPius = createContext({} as ContextPiusProps);
+
 function App() {
   const [pius, setPius] = useState([] as PiuData[]);
   useEffect(() => {
@@ -24,6 +36,8 @@ function App() {
     call();
   }, []);
 
+  const [favoritos, setFavoritos] = useState([""]);
+
   return (
     <div id="containerGeral">
       <div className="containerLateral">
@@ -31,23 +45,28 @@ function App() {
       </div>
       <div className="containerCentral">
         <h1 id="titulo">Início</h1>
-        <NovoPost />
-        {pius.map((piu) => {
-          return (
-            <Post
-              key={piu.id}
-              text={piu.text}
-              user={piu.user}
-              created_at={piu.created_at}
-            />
-          );
-        })}
-        <div className="containerLateral">
-          <form id="containerBusca">
-            <input type="text" placeholder="🔍 Buscar" id="busca" />
-          </form>
-          <Noticias />
-        </div>
+        <ContextPius.Provider value={{ pius, setPius }}>
+          <NovoPost />
+        </ContextPius.Provider>
+        <ContextFavoritos.Provider value={{ favoritos, setFavoritos }}>
+          {pius.map((piu) => {
+            return (
+              <Post
+                key={piu.id}
+                text={piu.text}
+                user={piu.user}
+                created_at={piu.created_at}
+                id={piu.id}
+              />
+            );
+          })}
+        </ContextFavoritos.Provider>
+      </div>
+      <div className="containerLateral">
+        <form id="containerBusca">
+          <input type="text" placeholder="🔍 Buscar" id="busca" />
+        </form>
+        <Noticias />
       </div>
     </div>
   );

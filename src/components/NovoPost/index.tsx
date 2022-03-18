@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { createContext, useState, useEffect } from "react";
 import * as S from "./styles";
 import ImgETexto from "./ImgETexto";
 import api from "../../config/api";
+import { ContextPius } from "../../App";
+import { PiuData, UserData } from "../../interfaces";
+import Foto from "../../assets/cachorro.jpg";
 
 interface ContadorContextProps {
   contador: number;
@@ -16,6 +19,7 @@ export const ContadorContext = createContext({} as ContadorContextProps);
 const NovoPost = () => {
   const [contador, setContador] = useState(0);
   const [texto, setTexto] = useState("");
+  const { pius, setPius } = useContext(ContextPius);
 
   function Postar() {
     if (contador == 0) {
@@ -32,6 +36,15 @@ const NovoPost = () => {
         })
         .then(function (response) {
           console.log(response);
+          setPius([
+            {
+              text: response.data.text,
+              id: response.data.id,
+              user: { username: "username123", photo: Foto } as UserData,
+              created_at: response.data.created_at,
+            },
+            ...pius,
+          ]);
         })
         .catch(function (error) {
           console.log(error);
@@ -39,7 +52,6 @@ const NovoPost = () => {
     }
     setTexto("");
   }
-
   return (
     <ContadorContext.Provider
       value={{ contador, setContador, texto, setTexto }}

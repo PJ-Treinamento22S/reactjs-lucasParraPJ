@@ -1,9 +1,15 @@
 import React from "react";
+import { useContext } from "react";
 import * as S from "./styles";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { ContextFavoritos } from "../../../App";
 
-const Acoes = () => {
+interface AcoesProps {
+  id: string;
+}
+
+const Acoes: React.FC<AcoesProps> = ({ id }) => {
   /* if(meu == 1){
     return(
       <div>
@@ -18,9 +24,26 @@ const Acoes = () => {
   }
   else{
 */
+
+  const { favoritos, setFavoritos } = useContext(ContextFavoritos);
+
   return (
     <S.ContainerAcoes>
-      <S.BotaoDestacar>
+      <S.BotaoDestacar
+        onClick={() => {
+          if (!favoritos.includes(id)) {
+            setFavoritos([...favoritos, id]);
+            console.log("oi");
+          } else {
+            setFavoritos(
+              favoritos.filter((e) => {
+                return e != id;
+              })
+            );
+          }
+          console.log(favoritos);
+        }}
+      >
         <S.Icone icon={faHeart} />
       </S.BotaoDestacar>
     </S.ContainerAcoes>
