@@ -15,9 +15,18 @@ export const BotaoInteracao = styled.button`
   border: none;
   display: flex;
   flex-direction: row;
+  cursor: pointer;
 `;
 
 export const IconeInteracao = styled(FontAwesomeIcon)`
+  height: 20px;
+  &:hover {
+    color: white;
+  }
+`;
+
+export const IconeInteracaoCheck = styled(FontAwesomeIcon)`
+  color: rgba(203, 124, 6, 1);
   height: 20px;
   &:hover {
     color: white;

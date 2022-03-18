@@ -11,7 +11,9 @@ export const ContainerImgTexto = styled.div`
 export const Imagem = styled.img`
   height: 80px;
   width: 80px;
+  flex-shrink: 0;
   border-radius: 50%;
+  border: 1px solid rgba(203, 124, 6, 1);
 `;
 
 export const ContainerTextos = styled.div`
@@ -28,6 +30,7 @@ export const UserEData = styled.p`
   width: 80%;
   margin-bottom: 0;
   overflow: hidden;
+  font-size: 20px;
 `;
 
 export const ConteudoPost = styled.p`

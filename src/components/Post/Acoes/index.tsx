@@ -1,6 +1,5 @@
 import React from "react";
 import * as S from "./styles";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
@@ -22,7 +21,7 @@ const Acoes = () => {
   return (
     <S.ContainerAcoes>
       <S.BotaoDestacar>
-        <FontAwesomeIcon icon={faHeart} />
+        <S.Icone icon={faHeart} />
       </S.BotaoDestacar>
     </S.ContainerAcoes>
   );

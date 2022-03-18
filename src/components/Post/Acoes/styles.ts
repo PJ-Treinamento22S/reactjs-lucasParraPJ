@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const ContainerAcoes = styled.div`
   display: flex;
@@ -27,7 +28,7 @@ export const BotaoDeletar = styled.button`
   margin-left: 10px;
 `;
 
-export const Icone = styled.i`
+export const Icone = styled(FontAwesomeIcon)`
   &:hover {
     cursor: pointer;
     color: white;

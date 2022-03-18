@@ -16,7 +16,7 @@ const ImgTexto: React.FC<ImgTextoProps> = ({
     <S.ContainerImgTexto>
       <S.Imagem src={imgSrc} />
       <S.ContainerTextos>
-        <S.UserEData>{userEData}</S.UserEData>
+        <S.UserEData>{userEData} </S.UserEData>
         <S.ConteudoPost>{conteudoPost}</S.ConteudoPost>
       </S.ContainerTextos>
     </S.ContainerImgTexto>
