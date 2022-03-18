@@ -3,20 +3,15 @@ import * as S from "./styles";
 import ImgTexto from "./ImgTexto";
 import Acoes from "./Acoes";
 import Interacoes from "./Interacoes";
+import { PiuData } from "../../interfaces";
 
-interface PropsPost {
-  imgSrc: string;
-  userEData: string;
-  conteudoPost: string;
-}
-
-const Post: React.FC<PropsPost> = ({ imgSrc, userEData, conteudoPost }) => {
+const Post: React.FC<PiuData> = ({ text, user }) => {
   return (
     <S.Post>
       <ImgTexto
-        imgSrc={imgSrc}
-        userEData={userEData}
-        conteudoPost={conteudoPost}
+        imgSrc={user.photo}
+        userEData={user.username}
+        conteudoPost={text}
       ></ImgTexto>
       <Acoes></Acoes>
       <Interacoes></Interacoes>

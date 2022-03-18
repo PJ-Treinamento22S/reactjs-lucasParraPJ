@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const ContainerInteracoes = styled.div`
   display: flex;
@@ -16,8 +17,8 @@ export const BotaoInteracao = styled.button`
   flex-direction: row;
 `;
 
-export const IconeInteracao = styled.i`
-  font-size: 22px;
+export const IconeInteracao = styled(FontAwesomeIcon)`
+  height: 20px;
   &:hover {
     color: white;
   }

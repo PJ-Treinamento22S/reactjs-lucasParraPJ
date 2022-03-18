@@ -1,5 +1,8 @@
 import React from "react";
 import * as S from "./styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 const Acoes = () => {
   /* if(meu == 1){
@@ -19,7 +22,7 @@ const Acoes = () => {
   return (
     <S.ContainerAcoes>
       <S.BotaoDestacar>
-        <S.Icone className="fa-solid fa-arrow-up"></S.Icone>
+        <FontAwesomeIcon icon={faHeart} />
       </S.BotaoDestacar>
     </S.ContainerAcoes>
   );

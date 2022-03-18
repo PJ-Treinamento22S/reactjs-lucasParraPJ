@@ -9,8 +9,8 @@ export const ContainerImgTexto = styled.div`
 `;
 
 export const Imagem = styled.img`
-  height: 100%;
-  width: 12%;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
 `;
 
