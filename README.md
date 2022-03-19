@@ -1,3 +1,10 @@
+Salveeeee.
+
+Na questao do botao de favoritar, como eu nao fiz a pagina de perfil para renderizar os posts favoritados, eu so adicionei eles numa lista
+que ta no arquivo app.tsx chamada favoritos.
+
+As acoes de deletar e dar like, alem de serem executadas no browser localmente, tambem batem na API.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

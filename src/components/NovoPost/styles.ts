@@ -44,5 +44,5 @@ export const MensagemVazia = styled.p`
   font-family: "Roboto", sans-serif;
   width: 40%;
   left: 35%;
-  bottom: 0px;
+  top: 0px;
 `;
