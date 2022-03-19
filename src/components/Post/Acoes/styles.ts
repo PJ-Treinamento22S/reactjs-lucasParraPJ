@@ -11,7 +11,7 @@ export const ContainerAcoes = styled.div`
   right: 30px;
 `;
 
-export const BotaoDestacar = styled.button`
+export const BotaoFavoritar = styled.button`
   font-size: 20px;
   background-color: rgba(0, 0, 0, 0);
   height: 20px;

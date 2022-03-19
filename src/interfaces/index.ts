@@ -4,7 +4,7 @@ export interface PiuData {
   text: string;
   updated_at?: string;
   user: UserData;
-  likes?: LikesData;
+  likes?: { id: string; user: UserData }[];
 }
 
 export interface UserData {
@@ -23,8 +23,4 @@ export interface FavData {
   id: string;
   text: string;
   updated_at: string;
-}
-
-export interface LikesData {
-  0: { id: string; user: UserData }[];
 }

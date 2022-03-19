@@ -26,7 +26,7 @@ const NovoPost = () => {
       console.log(
         <S.MensagemVazia>Escreva algo antes de postar!</S.MensagemVazia>
       );
-      return <S.MensagemVazia>Escreva algo antes de postar!</S.MensagemVazia>;
+      return <img src={Foto} />;
     } else if (contador > 140) {
       console.log("lol");
     } else {
@@ -40,8 +40,9 @@ const NovoPost = () => {
             {
               text: response.data.text,
               id: response.data.id,
-              user: { username: "username123", photo: Foto } as UserData,
+              user: { username: "usuario123", photo: Foto } as UserData,
               created_at: response.data.created_at,
+              likes: [],
             },
             ...pius,
           ]);

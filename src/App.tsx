@@ -31,7 +31,6 @@ function App() {
     const call = async () => {
       const dados = await getData();
       setPius(dados);
-      console.log(pius);
     };
     call();
   }, []);
@@ -47,20 +46,22 @@ function App() {
         <h1 id="titulo">Início</h1>
         <ContextPius.Provider value={{ pius, setPius }}>
           <NovoPost />
+
+          <ContextFavoritos.Provider value={{ favoritos, setFavoritos }}>
+            {pius.map((piu) => {
+              return (
+                <Post
+                  key={piu.id}
+                  text={piu.text}
+                  user={piu.user}
+                  created_at={piu.created_at}
+                  id={piu.id}
+                  likes={piu.likes}
+                />
+              );
+            })}
+          </ContextFavoritos.Provider>
         </ContextPius.Provider>
-        <ContextFavoritos.Provider value={{ favoritos, setFavoritos }}>
-          {pius.map((piu) => {
-            return (
-              <Post
-                key={piu.id}
-                text={piu.text}
-                user={piu.user}
-                created_at={piu.created_at}
-                id={piu.id}
-              />
-            );
-          })}
-        </ContextFavoritos.Provider>
       </div>
       <div className="containerLateral">
         <form id="containerBusca">

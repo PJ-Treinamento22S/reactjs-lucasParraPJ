@@ -9,7 +9,7 @@ const TextosPost = () => {
   if (contador < 140) {
     return (
       <S.ContainerTextosPost>
-        <S.UserEData>@username123</S.UserEData>
+        <S.UserEData>@usuario123</S.UserEData>
         <S.Form>
           <S.InputOk
             placeholder="O que deseja falar?"

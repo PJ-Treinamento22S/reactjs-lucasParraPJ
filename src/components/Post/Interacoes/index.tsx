@@ -4,18 +4,31 @@ import * as S from "./styles";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
 import { faRetweet } from "@fortawesome/free-solid-svg-icons";
+import api from "../../../config/api";
 
-const Interacoes = () => {
-  const [likes, setLike] = useState(0);
+interface InteracoesProps {
+  likesN: number;
+  id: string;
+}
+
+const Interacoes: React.FC<InteracoesProps> = ({ likesN, id }) => {
+  const [likes, setLike] = useState(likesN);
 
   function curtir() {
-    if (likes == 0) {
-      setLike(1);
+    if (likes == likesN) {
+      setLike(likesN + 1);
     } else {
-      setLike(0);
+      setLike(likesN);
+    }
+    try {
+      api.post("/pius/like", {
+        piu_id: id,
+      });
+    } catch (e) {
+      console.log(e);
     }
   }
-  if (likes == 0) {
+  if (likes == likesN) {
     return (
       <S.ContainerInteracoes>
         <S.BotaoInteracao onClick={curtir}>

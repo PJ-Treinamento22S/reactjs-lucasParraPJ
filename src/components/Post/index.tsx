@@ -34,7 +34,7 @@ function mesC(mes: string) {
   }
 }
 
-const Post: React.FC<PiuData> = ({ text, user, created_at, id }) => {
+const Post: React.FC<PiuData> = ({ text, user, created_at, id, likes }) => {
   const dia = String(created_at).slice(8, 10);
   const mes = mesC(String(created_at).slice(5, 7));
   const ano = String(created_at).slice(0, 4);
@@ -46,8 +46,8 @@ const Post: React.FC<PiuData> = ({ text, user, created_at, id }) => {
         userEData={`@${user.username} . ${data}`}
         conteudoPost={text}
       ></ImgTexto>
-      <Acoes id={String(id)}></Acoes>
-      <Interacoes></Interacoes>
+      <Acoes id={String(id)} username={user.username}></Acoes>
+      <Interacoes id={String(id)} likesN={(likes as []).length}></Interacoes>
     </S.Post>
   );
 };
